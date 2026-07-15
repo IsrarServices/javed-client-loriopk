@@ -96,7 +96,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <main className="flex-1">{children}</main>
 
       <footer className="mt-24 border-t border-border/60 bg-secondary/40">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-4 md:px-6">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-5 md:px-6">
           <div className="md:col-span-2">
             <div className="font-display text-3xl text-brand">{BRAND}</div>
             <p className="mt-3 max-w-sm text-sm text-muted-foreground">
@@ -144,6 +144,26 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               <li>
                 <Link to="/cart" className="hover:text-brand">
                   Cart
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-widest text-foreground">Legal</div>
+            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+              <li>
+                <Link to="/privacy-policy" className="hover:text-brand">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/refund-return-policy" className="hover:text-brand">
+                  Refund & Return Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms-conditions" className="hover:text-brand">
+                  Terms & Conditions
                 </Link>
               </li>
             </ul>
