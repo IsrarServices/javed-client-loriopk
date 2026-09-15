@@ -52,6 +52,12 @@ function ProductDetail() {
   const { add } = useCart();
   const navigate = useNavigate();
 
+  const isRenu = product.slug.startsWith("renu-");
+  const candidates = products.filter((p) => p.slug !== product.slug && !p.isBundle);
+  const sameGroup = candidates.filter((p) => p.slug.startsWith("renu-") === isRenu);
+  const otherGroup = candidates.filter((p) => p.slug.startsWith("renu-") !== isRenu);
+  const recommended = (sameGroup.length >= 2 ? sameGroup : [...sameGroup, ...otherGroup]).slice(0, 2);
+
   const handleAdd = () => {
     add(product.slug, qty);
     toast.success(`${product.name} added to cart`);
@@ -190,28 +196,25 @@ function ProductDetail() {
         <div className="mt-20">
           <h2 className="font-display text-3xl">You may also like</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
-            {products
-              .filter((p) => p.slug !== product.slug && !p.isBundle)
-              .slice(0, 2)
-              .map((p) => (
-                <Link
-                  key={p.slug}
-                  to="/products/$slug"
-                  params={{ slug: p.slug }}
-                  className="group overflow-hidden rounded-2xl border border-border/60 bg-card transition-all hover:-translate-y-1 hover:shadow-elegant"
+            {recommended.map((p) => (
+              <Link
+                key={p.slug}
+                to="/products/$slug"
+                params={{ slug: p.slug }}
+                className="group overflow-hidden rounded-2xl border border-border/60 bg-card transition-all hover:-translate-y-1 hover:shadow-elegant"
+              >
+                <div
+                  className="aspect-[4/3] w-full"
+                  style={{ background: `linear-gradient(160deg, ${p.accent}33, ${p.accent}0d)` }}
                 >
-                  <div
-                    className="aspect-[4/3] w-full"
-                    style={{ background: `linear-gradient(160deg, ${p.accent}33, ${p.accent}0d)` }}
-                  >
-                    <img src={p.image} alt={p.name} className="h-full w-full object-cover transition-transform group-hover:scale-105" />
-                  </div>
-                  <div className="p-5">
-                    <div className="font-display text-lg">{p.name}</div>
-                    <div className="mt-1 text-sm text-brand">{CURRENCY} {p.price}</div>
-                  </div>
-                </Link>
-              ))}
+                  <img src={p.image} alt={p.name} className="h-full w-full object-cover transition-transform group-hover:scale-105" />
+                </div>
+                <div className="p-5">
+                  <div className="font-display text-lg">{p.name}</div>
+                  <div className="mt-1 text-sm text-brand">{CURRENCY} {p.price}</div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

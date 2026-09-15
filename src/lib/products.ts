@@ -16,7 +16,6 @@ export const BRAND = "Lorio";
 export const CURRENCY = "PKR";
 
 export const PRICE_PER_BAR = 150;
-export const FAMILY_PACK_PRICE = 1200;
 export const RENU_PRICE_PER_BAR = 120;
 
 export const products: Product[] = [

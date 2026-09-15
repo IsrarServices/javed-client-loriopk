@@ -68,7 +68,7 @@ function Home() {
         <div className="flex items-end justify-between gap-4">
           <div>
             <div className="text-xs font-semibold uppercase tracking-widest text-brand">Our Collection</div>
-            <h2 className="mt-2 font-display text-4xl text-foreground md:text-5xl">Three scents. One glow.</h2>
+            <h2 className="mt-2 font-display text-4xl text-foreground md:text-5xl">Our Collection.</h2>
           </div>
           <Link to="/products" className="hidden text-sm font-medium text-brand hover:underline md:inline">
             View all →
