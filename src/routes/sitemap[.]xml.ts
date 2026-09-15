@@ -13,6 +13,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/products/jasmine-scent", priority: "0.8" },
           { path: "/products/pink-rose-glow", priority: "0.8" },
           { path: "/products/milk-almond-honey", priority: "0.8" },
+          { path: "/products/family-pack", priority: "0.8" },
+          { path: "/products/renu-almond-extract", priority: "0.8" },
+          { path: "/products/renu-jasmine-extract", priority: "0.8" },
+          { path: "/products/renu-rose-fresh", priority: "0.8" },
+          { path: "/products/renu-family-pack", priority: "0.8" },
           { path: "/about", priority: "0.6" },
           { path: "/contact", priority: "0.6" },
         ];

@@ -2,14 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site-layout";
 import { ProductCard } from "@/components/product-card";
 import { Button } from "@/components/ui/button";
-import { products, WHATSAPP_NUMBER } from "@/lib/products";
+import { products, getProduct, WHATSAPP_NUMBER } from "@/lib/products";
 import { Leaf, Sparkles, ShieldCheck, Truck } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Home,
 });
 
+const STORY_IMAGE_SLUGS = ["jasmine-scent", "pink-rose-glow"];
+
 function Home() {
+  const storyImages = STORY_IMAGE_SLUGS.map(getProduct).filter(Boolean) as typeof products;
   return (
     <SiteLayout>
       {/* HERO */}
@@ -95,7 +98,7 @@ function Home() {
             </Button>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            {products.slice(0, 2).map((p) => (
+            {storyImages.map((p) => (
               <div
                 key={p.slug}
                 className="overflow-hidden rounded-2xl"

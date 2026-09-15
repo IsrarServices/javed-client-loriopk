@@ -17,8 +17,58 @@ export const CURRENCY = "PKR";
 
 export const PRICE_PER_BAR = 150;
 export const FAMILY_PACK_PRICE = 1200;
+export const RENU_PRICE_PER_BAR = 120;
 
 export const products: Product[] = [
+  {
+    slug: "renu-almond-extract",
+    name: "Renu Almond Extract",
+    variant: "Renu Almond Extract",
+    price: RENU_PRICE_PER_BAR,
+    image: "/assets/Renu-Almond-Extract.jpeg",
+    accent: "#c9975f",
+    tagline: "Nourishing almond extract for soft, smooth skin.",
+    benefits: ["100% Natural", "Nourishing", "Long-lasting fragrance"],
+    description:
+      "A rich almond-extract bar that deeply nourishes and softens. Gentle daily cleansing for smooth, supple skin.",
+  },
+  {
+    slug: "renu-jasmine-extract",
+    name: "Renu Jasmine Extract",
+    variant: "Renu Jasmine Extract",
+    price: RENU_PRICE_PER_BAR,
+    image: "/assets/Renu-jasmine-extract.jpeg",
+    accent: "#4f8fc0",
+    tagline: "Fresh jasmine extract for a clean, floral glow.",
+    benefits: ["100% Natural", "Nourishing", "Long-lasting fragrance"],
+    description:
+      "A delicate bar infused with jasmine extract. Cleanses gently while leaving skin fresh, soft and lightly scented.",
+  },
+  {
+    slug: "renu-rose-fresh",
+    name: "Renu Rose Fresh",
+    variant: "Renu Rose Fresh",
+    price: RENU_PRICE_PER_BAR,
+    image: "/assets/Renu-Rose-Fresh.jpeg",
+    accent: "#e0829e",
+    tagline: "Rose petal freshness for a radiant, even tone.",
+    benefits: ["100% Natural", "Nourishing", "Long-lasting fragrance"],
+    description:
+      "A refreshing rose bar that revives and brightens. Moisturizing rose petal care for a naturally radiant finish.",
+  },
+  {
+    slug: "renu-family-pack",
+    name: "Renu Family Pack",
+    variant: "Family Pack · 3 Scents Bundle",
+    price: RENU_PRICE_PER_BAR * 3,
+    image: "/assets/Renu-Family-Pack.jpeg",
+    accent: "#d9b382",
+    tagline: "All three Renu scents — the complete Renu experience.",
+    benefits: ["100% Natural", "Nourishing", "Long-lasting fragrance"],
+    description:
+      "The complete Renu family — Almond Extract, Jasmine Extract and Rose Fresh together in one beautifully priced bundle. Ideal for gifting or stocking up.",
+    isBundle: true,
+  },
   {
     slug: "jasmine-scent",
     name: "Lorio Jasmine Scent",
@@ -59,7 +109,7 @@ export const products: Product[] = [
     slug: "family-pack",
     name: "Lorio Family Pack",
     variant: "Family Pack · 3 Scents Bundle",
-    price: FAMILY_PACK_PRICE,
+    price: PRICE_PER_BAR * 3,
     image: "/assets/lorio-family.jpg",
     accent: "#d9b382",
     tagline: "All three signature scents — the complete Lorio experience.",
